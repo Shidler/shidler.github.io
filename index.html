@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Для тебе <3</title>
+    
+    <style>@import url("https://fonts.googleapis.com/css2?family=Pacifico:wght@200;400;600&display=swap");
+
+        @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css");
+        
+        * {
+          box-sizing: border-box;
+        }
+        .cd__main{
+           background: pink !important;
+           font-family: 'Noirden-Bold', !important;
+           src: url(font/Noirden-Bold.ttf);
+           min-height: 450px;
+        }
+        body { 
+          background-color: pink;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-family: 'Pacifico', cursive;
+          margin: 0;
+          min-height: 100vh;
+          flex-direction: column;
+        }
+        
+        .heart {
+          position: fixed;
+          font-size: 1.5rem;
+          top: -1vh;
+          transform: translateY(0);
+          animation: fall 3s linear forwards;
+        }
+        
+        @keyframes fall {
+          from {
+             transform: translateY(0vh) translateX(-10vw); 
+          }
+          to {
+             transform: translateY(105vh) translateX(10vw); 
+          }
+        }
+    </style>
+    <script>function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = Math.random() * 2 + 3 + "s";
+            
+            heart.innerText = '💗';
+            
+            document.body.appendChild(heart);
+            
+            setTimeout(() => {
+                        heart.remove();
+                        }, 5000);
+          }
+          
+          setInterval(createHeart, 300);
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-red-300"> 
+
+    <p class="text-4xl animate-bounce drop-shadow-xl inline-block shadow-black">Я люблю тебе, сонце!</p>
+
+    <a class="mt-8 font-serif text-2xl text-white inline-block bg-red-600 focus:bg-red-900 w-48 h-24 text-center py-8 rounded-lg focus:scale-90 transition-all shadow-md focus:shadow-lg focus:shadow-black shadow-black" style="z-index: 500;" href="page.html">Натисни мене!</a>
+
+</body>
+</html>
